@@ -1,0 +1,20 @@
+div.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    div.left_side{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+    }
+
+    div.right_side{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 50%;
+    }
+
+}
