@@ -13,7 +13,7 @@ div.container{
             position: absolute;
             font-family: Main;
             text-align: end;
-            font-size: 4em;
+            font-size: 4rem;
             top: 50%;
             right: 50%;
             margin: 10px;
@@ -28,7 +28,7 @@ div.container{
             position: absolute;
             font-family: Roboto;
             text-align: left;
-            font-size: 1.5em;
+            font-size: 1.5rem;
             top: 50%;
             margin: 10px;
             margin-left: 50px;
@@ -84,9 +84,31 @@ div.container{
 
     div.icon-btn{
         position: absolute;
+        height: max-content;
         margin: 15px;
         bottom: 0px;
         left: 0px;
+        display: flex;
+
+        img.icon{
+            background-color: #1ED760;
+            max-height: 100%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            padding: 5px;
+        }
+
+        button{
+            background-color: #1ED760;
+            outline: none;
+            border: none;
+            font-family: Main;
+            color: white;
+            padding: 5px;
+            font-size: 1.5rem;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
     }
 
 }
