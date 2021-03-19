@@ -45,19 +45,40 @@ div.container{
         height: 100%;
         left: 50%;
 
-        img.foreground {
-            position: relative;
-            width: 60%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-        }
+
 
         img.background {
             position: absolute;
             height: 100%;
             width: 100%;
             filter: blur(9px);
+        }
+
+
+        section{
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+            img.foreground {
+                position: relative;
+                width: 60%;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%);
+            }
+
+            span.featured-txt{
+                position: absolute;
+                right: 20%;
+                top: 102%;
+                width: fit-content;
+                font-size: x-large;
+                text-align: end;
+                color: white;
+                font-family: Main;
+            }
         }
     }
 
