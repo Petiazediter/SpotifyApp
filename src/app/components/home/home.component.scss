@@ -35,7 +35,15 @@ div.container{
             margin-left: 50px;
             color: #727272;
             left: 50%;
-            transform: translate(-50%,-50%);            
+            transform: translate(-50%,-50%);     
+        }
+
+        img.waves{
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            top: 100%;
+            transform: translateY(-100%);
         }
 
     }
