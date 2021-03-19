@@ -8,6 +8,35 @@ div.container{
         position: absolute;
         width: 50%;
         height: 100%;
+
+        div.right_aligned{
+            position: absolute;
+            font-family: Main;
+            text-align: end;
+            font-size: 4em;
+            top: 50%;
+            right: 50%;
+            margin: 10px;
+            background-color: #3CD2B7;
+            background-clip: text;
+            text-shadow: 0px 4px 4px rgba(255,255,255,.5);
+            color: transparent;
+            transform: translate(-50%,-50%);
+        }
+
+        div.left_aligned{
+            position: absolute;
+            font-family: Roboto;
+            text-align: left;
+            font-size: 1.5em;
+            top: 50%;
+            margin: 10px;
+            margin-left: 50px;
+            color: #727272;
+            left: 50%;
+            transform: translate(-50%,-50%);            
+        }
+
     }
 
     div.right_side{
