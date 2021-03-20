@@ -23,9 +23,9 @@ export class CallbackComponent implements OnInit {
       console.log(x[0].key)
       console.log("Access token : ")
       if ( x[0].key == "access_token"){
-        console.log(x[0].value);
+        spotifyService.SetToken(x[0].key);
       } else {
-        console.log(undefined)
+        spotifyService.SetToken(null);
       }
     });
   }
