@@ -1,1 +1,7 @@
-<p>stats works!</p>
+<div class="container" *ngIf="isLoaded">
+    Loaded
+</div>
+
+<div class="loading" *ngIf="!isLoaded">
+    Not loaded
+</div>

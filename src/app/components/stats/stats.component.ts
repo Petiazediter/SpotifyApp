@@ -27,7 +27,7 @@ export class StatsComponent implements OnInit {
         this.RecursiveApiGetter(this.spotifyService.GetTracksByUrl(value.next))
       } else {
         // All tracks collected
-        console.log(this.tracks.length)
+        this.isLoaded = true;
       }
     })
   }
