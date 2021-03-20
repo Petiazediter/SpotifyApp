@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserTrackResponseObject } from '../models/UserTrackResponseObject';
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +50,12 @@ export class SpotifyService {
 
   GetTracks(offset : number){
     const requestOptions = this.GetHeaderOptions();
-    return this.httpClient.get<any[]>("https://api.spotify.com/v1/me/tracks?offset="+offset,requestOptions).toPromise();
+    return this.httpClient.get<UserTrackResponseObject>("https://api.spotify.com/v1/me/tracks?offset="+offset,requestOptions).toPromise();
+  }
+
+  GetTracksByUrl(url : string){
+    const requestOptions = this.GetHeaderOptions();
+    return this.httpClient.get<UserTrackResponseObject>(url,requestOptions).toPromise();
   }
 
 }
