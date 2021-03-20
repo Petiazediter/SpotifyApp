@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyService } from 'src/app/services/spotify.service';
@@ -12,9 +13,20 @@ export class CallbackComponent implements OnInit {
 
   constructor(private httpClient : HttpClient, private route : ActivatedRoute, private spotifyService : SpotifyService) {
     this.route.queryParams.subscribe(params => {
-      const code : string = params['code']
-      const error: string = params['error']
-      spotifyService.OnCallback(code)
+      const hashString = window.location.hash.substring(1)
+      const table = hashString.split("&")
+      let x = []
+      for ( let y of table){
+        let v = y.split("=");
+        x.push({key : v[0],value : v[1]})
+      }
+      console.log(x[0].key)
+      console.log("Access token : ")
+      if ( x[0].key == "access_token"){
+        console.log(x[0].value);
+      } else {
+        console.log(undefined)
+      }
     });
   }
 

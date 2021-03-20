@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +12,14 @@ export class SpotifyService {
   generateLink(clientId : string, redirectUri : string){
     var scopes = 'user-read-private user-read-email user-library-read'
     var link = 'https://accounts.spotify.com/authorize'+
-    '?response_type=code'+
+    '?response_type=token'+
     '&client_id=' + clientId +
     (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
     '&redirect_uri=' + encodeURIComponent(redirectUri) 
     window.location.href=link;
   }
 
-  OnCallback( code : string) : void { 
-    if ( code == undefined){
-      if ( localStorage.getItem("code") != null ){
-        localStorage.removeItem("code")
-      }
-    } else{
-      localStorage.setItem("code",code)
-    }
+  OnFailCallback( code : string) : void { 
     window.location.href="http://localhost:4200"
   }
 
