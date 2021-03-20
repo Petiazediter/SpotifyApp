@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotify.service';
 
@@ -10,12 +11,14 @@ export class HomeComponent implements OnInit {
 
   userToken : any = null;
 
-  constructor(private service : SpotifyService) { 
+  constructor(private service : SpotifyService,private location : Location) { 
     this.userToken = service.token;
   }
 
   ngOnInit(): void {
-    
+    if ( this.userToken != null){
+      this.location.replaceState("/stats")
+    }
   }
 
   onConnect(): void{
