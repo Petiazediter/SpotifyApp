@@ -22,4 +22,10 @@ export class HomeComponent implements OnInit {
     this.service.generateLink("aaeea3eaae8940c1a35e4645a2028096","http://localhost:4200/callback/");
   }
 
+  onSignOut() : void{
+    this.service.SetToken(null);
+    localStorage.removeItem("token")
+    this.userToken = null;
+  }
+
 }

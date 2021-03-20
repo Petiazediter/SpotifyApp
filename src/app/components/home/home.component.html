@@ -20,9 +20,14 @@
     </div>
 
 
-    <div (click)="onConnect()" class="icon-btn">
+    <div *ngIf="userToken == null" (click)="onConnect()" class="icon-btn">
         <img class="icon" src="assets/images/SpotifyIcon.svg">
         <button href="#">Connect with Spotify</button>
+    </div>
+
+    <div *ngIf="userToken != null" (click)="onSignOut()" class="icon-btn">
+        <img class="icon" src="assets/images/SpotifyIcon.svg">
+        <button href="#">Sign out Spotify</button>
     </div>
 
 </div>
