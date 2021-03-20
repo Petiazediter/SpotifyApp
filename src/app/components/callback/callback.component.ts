@@ -12,7 +12,6 @@ export class CallbackComponent implements OnInit {
 
   constructor(private httpClient : HttpClient, private route : ActivatedRoute, private spotifyService : SpotifyService) {
     this.route.queryParams.subscribe(params => {
-      //console.log( params['code']);
       const code : string = params['code']
       const error: string = params['error']
       spotifyService.OnCallback(code)
