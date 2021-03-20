@@ -16,13 +16,15 @@ export class SpotifyService {
     '&client_id=' + clientId +
     (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
     '&redirect_uri=' + encodeURIComponent(redirectUri) 
-
-    console.log(link);
     window.location.href=link;
-
   }
 
-  /*getToken(){
+  OnCallback( code : string) : void { 
+    if ( code == undefined){
+      console.log("Redirect failed")
+    } else{
+      console.log("Redirect success")
+    }
+  }
 
-  }*/
 }
