@@ -3,5 +3,18 @@
 </div>
 
 <div class="loading" *ngIf="!isLoaded">
-    Not loaded
+    <div class="left-side">
+        There's a<br>lot to<br>process
+    </div>
+    <div class="right-side">
+        <section *ngIf="currentTrack != null">
+            <b>{{ currentTrack.track.artists[0].name }}</b><br>huh?<br>We <b class="green">LOVE</b> it!<br>
+        </section>
+    </div>
+    <div class="album-image">
+        <img *ngIf="currentTrack!=null" class="album-img-src-bg" [src]="currentTrack.track.album.images[0].url"/>
+        <img *ngIf="currentTrack==null" class="album-img-src-bg" src="assets/images/featured.png"/>
+        <img *ngIf="currentTrack!=null" class="album-img-src-fg" [src]="currentTrack.track.album.images[0].url"/>
+        <img *ngIf="currentTrack==null" class="album-img-src-fg" src="assets/images/featured.png"/>
+    </div>
 </div>

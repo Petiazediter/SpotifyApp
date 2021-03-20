@@ -11,6 +11,7 @@ export class StatsComponent implements OnInit {
 
   isLoaded : boolean = false;
   tracks : any[] = [];
+  currentTrack : any = null;
 
   constructor(private spotifyService : SpotifyService) {
     console.log("Const")
@@ -21,6 +22,10 @@ export class StatsComponent implements OnInit {
     promise.then((value : UserTrackResponseObject) => {
       value.items.forEach(element => {
         this.tracks.push(element)
+        if ( this.tracks.length % 200 == 0){
+          this.currentTrack = element;
+          console.log(this.currentTrack)
+        }
       });
       if ( value.next != null){
         // Collecting the next slide
