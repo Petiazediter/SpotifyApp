@@ -1,5 +1,7 @@
 import { Location } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class SpotifyService {
   public token : any = null;
   private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'
 
-  constructor(private location : Location) { 
+  constructor(private location : Location, private httpClient : HttpClient) { 
     if ( localStorage.getItem("token") != null){
       this.token = localStorage.getItem("token")
     }
@@ -34,6 +36,20 @@ export class SpotifyService {
     this.token = null;
     localStorage.removeItem("token")
     this.location.replaceState("/")
+  }
+
+  GetTracksSubscriber() : Observable<any>{
+    const headerDict = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer '+ this.token,
+    } 
+    
+    const requestOptions = {                                                                                                                                                                                 
+      headers: new HttpHeaders(headerDict), 
+    };
+
+    return this.httpClient.get<any>("https://api.spotify.com/v1/me/tracks",requestOptions);
   }
 
 }

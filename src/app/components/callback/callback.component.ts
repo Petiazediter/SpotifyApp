@@ -23,7 +23,7 @@ export class CallbackComponent implements OnInit {
       console.log(x[0].key)
       console.log("Access token : ")
       if ( x[0].key == "access_token"){
-        spotifyService.SetToken(x[0].key);
+        spotifyService.SetToken(x[0].value);
       } else {
         spotifyService.SetToken(null);
       }
