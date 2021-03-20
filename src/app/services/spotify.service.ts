@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class SpotifyService {
   public token : any = null;
   private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'ű
 
-  constructor() { 
+  constructor(private location : Location) { 
     if ( localStorage.getItem("token") != null){
       this.token = localStorage.getItem("token")
     }
@@ -27,6 +28,12 @@ export class SpotifyService {
   SetToken(token : any){
     this.token = token
     localStorage.setItem("token", token)
+  }
+
+  OnSignOut(){
+    this.token = null;
+    localStorage.removeItem("token")
+    this.location.replaceState("/")
   }
 
 }
