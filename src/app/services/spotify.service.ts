@@ -38,21 +38,18 @@ export class SpotifyService {
     this.location.replaceState("/")
   }
 
-  private GetHeaders(){
-    const headerDict = {
+  private GetHeaderOptions() {
+    let headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Authorization': 'Bearer '+ this.token,
     } 
-    const requestOptions = {                                                                                                                                                                                 
-      headers: new HttpHeaders(headerDict), 
-    };
-    return requestOptions;
+    return {headers : new HttpHeaders(headerDict)}
   }
 
-  GetTracksSubscriber() : Observable<any>{
-    const requestOptions = this.GetHeaders();
-    return this.httpClient.get<any>("https://api.spotify.com/v1/me/tracks",requestOptions);
+  GetTracks(offset : number){
+    const requestOptions = this.GetHeaderOptions();
+    return this.httpClient.get<any[]>("https://api.spotify.com/v1/me/tracks?offset="+offset,requestOptions).toPromise();
   }
 
 }

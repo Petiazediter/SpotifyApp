@@ -9,17 +9,14 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 export class StatsComponent implements OnInit {
 
   constructor(private spotifyService : SpotifyService) {
-    spotifyService.GetTracksSubscriber().subscribe(
-      (response) => {
-          console.log(response)
-      },
-      (error) => {
-        spotifyService.OnSignOut();
-      })
+    console.log("Const")
+    spotifyService.GetTracks(0).then((value : any) => {
+        console.log(value)
+    })
   }
 
   ngOnInit(): void {
-  
+    console.log("Innit")
   }
 
 }
