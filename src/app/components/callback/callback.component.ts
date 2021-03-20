@@ -27,6 +27,7 @@ export class CallbackComponent implements OnInit {
       } else {
         spotifyService.SetToken(null);
       }
+      window.location.href = "http://localhost:4200/"
     });
   }
 
