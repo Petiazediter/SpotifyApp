@@ -21,10 +21,13 @@ export class SpotifyService {
 
   OnCallback( code : string) : void { 
     if ( code == undefined){
-      console.log("Redirect failed")
+      if ( localStorage.getItem("code") != null ){
+        localStorage.removeItem("code")
+      }
     } else{
-      console.log("Redirect success")
+      localStorage.setItem("code",code)
     }
+    window.location.href="http://localhost:4200"
   }
 
 }
