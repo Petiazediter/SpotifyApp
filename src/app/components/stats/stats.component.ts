@@ -9,7 +9,8 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class StatsComponent implements OnInit {
 
-  things : any[] = [];
+  isLoaded : boolean = false;
+  tracks : any[] = [];
 
   constructor(private spotifyService : SpotifyService) {
     console.log("Const")
@@ -19,20 +20,18 @@ export class StatsComponent implements OnInit {
   RecursiveApiGetter(promise : Promise<UserTrackResponseObject>){
     promise.then((value : UserTrackResponseObject) => {
       value.items.forEach(element => {
-        this.things.push(element)
+        this.tracks.push(element)
       });
       if ( value.next != null){
         // Collecting the next slide
         this.RecursiveApiGetter(this.spotifyService.GetTracksByUrl(value.next))
       } else {
         // All tracks collected
-        console.log(this.things.length)
+        console.log(this.tracks.length)
       }
     })
   }
 
-  ngOnInit(): void {
-    console.log("Innit")
-  }
+  ngOnInit(){}
 
 }
