@@ -8,9 +8,14 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service : SpotifyService) { }
+  userToken : any = null;
+
+  constructor(private service : SpotifyService) { 
+    this.userToken = service.token;
+  }
 
   ngOnInit(): void {
+    
   }
 
   onConnect(): void{
