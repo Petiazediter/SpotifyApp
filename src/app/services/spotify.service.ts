@@ -38,17 +38,20 @@ export class SpotifyService {
     this.location.replaceState("/")
   }
 
-  GetTracksSubscriber() : Observable<any>{
+  private GetHeaders(){
     const headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Authorization': 'Bearer '+ this.token,
     } 
-    
     const requestOptions = {                                                                                                                                                                                 
       headers: new HttpHeaders(headerDict), 
     };
+    return requestOptions;
+  }
 
+  GetTracksSubscriber() : Observable<any>{
+    const requestOptions = this.GetHeaders();
     return this.httpClient.get<any>("https://api.spotify.com/v1/me/tracks",requestOptions);
   }
 

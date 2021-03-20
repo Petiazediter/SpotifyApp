@@ -11,7 +11,7 @@ export class StatsComponent implements OnInit {
   constructor(private spotifyService : SpotifyService) {
     spotifyService.GetTracksSubscriber().subscribe(
       (response) => {
-          
+          console.log(response)
       },
       (error) => {
         spotifyService.OnSignOut();
