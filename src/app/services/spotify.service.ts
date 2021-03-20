@@ -18,6 +18,7 @@ export class SpotifyService {
     '&redirect_uri=' + encodeURIComponent(redirectUri) 
 
     console.log(link);
+    window.location.href=link;
 
   }
 
