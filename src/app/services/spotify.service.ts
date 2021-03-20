@@ -7,7 +7,7 @@ import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/co
 export class SpotifyService {
 
   public token : any = null;
-  private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'ű
+  private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'
 
   constructor(private location : Location) { 
     if ( localStorage.getItem("token") != null){
