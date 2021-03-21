@@ -18,7 +18,6 @@ export class HomeComponent {
   medTermTopTracks!: TrackContainer;
   longTermTopTracks!: TrackContainer;
 
-
   constructor(public service : SpotifyService,private location : Location) { 
     this.loaded = 0;
     if ( SpotifyService.token != null){
