@@ -7,16 +7,12 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   userToken : any = null;
 
   constructor(public service : SpotifyService,private location : Location) { 
     console.log(SpotifyService.token)
-  }
-
-  ngOnInit(): void {
-    
   }
 
   getToken() : string{
