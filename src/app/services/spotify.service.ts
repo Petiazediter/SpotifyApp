@@ -37,6 +37,7 @@ export class SpotifyService {
 
   OnSignOut(){
     SpotifyService.token = null;
+    localStorage.removeItem("token")
     this.location.replaceState("/")
   }
 
