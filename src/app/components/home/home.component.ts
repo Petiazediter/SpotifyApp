@@ -12,9 +12,14 @@ export class HomeComponent implements OnInit {
   userToken : any = null;
 
   constructor(public service : SpotifyService,private location : Location) { 
+    console.log(SpotifyService.token)
   }
 
   ngOnInit(): void {
+  }
+
+  getToken() : string{
+    return SpotifyService.token;
   }
 
   onConnect(): void{

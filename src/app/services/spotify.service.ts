@@ -9,10 +9,11 @@ import { UserTrackResponseObject } from '../models/UserTrackResponseObject';
 })
 export class SpotifyService {
 
-  public token : any = null;
+  public static token : any = null;
   private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'
 
   constructor(private location : Location, private httpClient : HttpClient) { 
+    SpotifyService.token = localStorage.getItem("token")
   }
 
   generateLink(clientId : string, redirectUri : string){
@@ -26,11 +27,12 @@ export class SpotifyService {
   }
 
   SetToken(token : any){
-    this.token = token
+    SpotifyService.token = token
+    localStorage.setItem("token",token)
   }
 
   OnSignOut(){
-    this.token = null;
+    SpotifyService.token = null;
     this.location.replaceState("/")
   }
 
@@ -38,7 +40,7 @@ export class SpotifyService {
     let headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': 'Bearer '+ this.token,
+      'Authorization': 'Bearer '+ SpotifyService.token,
     } 
     return {headers : new HttpHeaders(headerDict)}
   }
