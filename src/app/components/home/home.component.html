@@ -31,12 +31,12 @@
         <button href="#">Disconnect from Spotify</button>
     </div>  
 
-    <div class="loadingcontainer">
+    <div class="loadingcontainer" *ngIf="isLoaded == false">
         <app-main-text 
         leftText="We reading your stats..."
         rightText="There's a lot of interesting things about you!"
         class="maintext">
         </app-main-text>
-        <app-infinite-load-bar *ngIf="isLoaded == false"></app-infinite-load-bar>    
+        <app-infinite-load-bar></app-infinite-load-bar>    
     </div>
 </div>

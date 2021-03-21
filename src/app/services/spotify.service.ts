@@ -21,7 +21,27 @@ export class SpotifyService implements SpotifyServiceInterface {
   private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'
 
   constructor(private location : Location, private httpClient : HttpClient) { 
-    SpotifyService.token = localStorage.getItem("token")
+    if ( this.isExpired()) {
+      SpotifyService.token = null;
+    } else {
+      SpotifyService.token = localStorage.getItem("token")
+    }
+  }
+
+  isExpired(){
+    if ( localStorage.getItem("added")!=null){
+      var t1 = new Date()
+      var t2 = Date.parse(localStorage.getItem("added"))
+      var dif = t1.getTime() - t2;
+      var Seconds_from_T1_to_T2 = dif / 1000;
+      var Seconds_Between_Dates = Math.abs(Seconds_from_T1_to_T2);
+      console.log(Seconds_Between_Dates)
+      if (Seconds_Between_Dates >= 3600){
+        return true
+      }
+      return false;
+    }
+    return true;
   }
 
   generateLink(clientId : string, redirectUri : string){
@@ -37,6 +57,11 @@ export class SpotifyService implements SpotifyServiceInterface {
   SetToken(token : any){
     SpotifyService.token = token
     localStorage.setItem("token",token)
+    var date = new Date();
+    var dd = String(date.getDate()).padStart(2, '0');
+    var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = date.getFullYear();
+    localStorage.setItem ("added", date.toString())
   }
 
   OnSignOut(){
