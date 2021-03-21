@@ -3,13 +3,14 @@ div.container{
     position: relative;
     width: 100vw;
     height: 100vh;
+    background-color: #F1F1E6;
     display: flex;
     overflow: hidden;
 
 
     div.left_side{
         position: absolute;
-        background-color: #F1F1E6;
+        
         width: 100vw;
 
         div.right_aligned{

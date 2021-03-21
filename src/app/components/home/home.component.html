@@ -2,7 +2,7 @@
     <div class="left_side">
         <app-main-text 
         leftText="We love your taste of music."
-        rightText="Log in to get your Spotify stats, and be proud of your numbers!"
+        rightText="Get your Spotify stats, and be proud of your numbers!"
         class="maintext"></app-main-text>
 
         <div (click)="onConnect()" class="icon-btn">
@@ -26,19 +26,14 @@
 
 <div *ngIf="getToken() != null" class="container">
 
+    <div (click)="onSignOut()" class="icon-btn">
+        <img class="icon" src="assets/images/SpotifyIcon.svg">
+        <button href="#">Disconnect from Spotify</button>
+    </div>  
 
-
-    <div class="left_side withtoken">
-        <app-main-text 
-        leftText="We love your taste of music."
-        rightText="Get your Spotify stats, and be proud of your numbers!"
-        class="maintext"></app-main-text>
-
-        <div (click)="onSignOut()" class="icon-btn">
-            <img class="icon" src="assets/images/SpotifyIcon.svg">
-            <button href="#">Disconnect from Spotify</button>
-        </div>  
-
-    </div>
+    <app-main-text 
+    leftText="We reading your stats..."
+    rightText="There's a lot of interesting things about you!"
+    class="maintext"></app-main-text>
 
 </div>
