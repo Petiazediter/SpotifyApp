@@ -11,8 +11,7 @@ export class HomeComponent implements OnInit {
 
   userToken : any = null;
 
-  constructor(private service : SpotifyService,private location : Location) { 
-    this.userToken = service.token;
+  constructor(public service : SpotifyService,private location : Location) { 
   }
 
   ngOnInit(): void {
