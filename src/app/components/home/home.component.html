@@ -31,9 +31,14 @@
         <button href="#">Disconnect from Spotify</button>
     </div>  
 
-    <app-main-text 
-    leftText="We reading your stats..."
-    rightText="There's a lot of interesting things about you!"
-    class="maintext"></app-main-text>
+    <div class="loadingcontainer">
+        <app-main-text 
+        leftText="We reading your stats..."
+        rightText="There's a lot of interesting things about you!"
+        class="maintext">
+        </app-main-text>
+        <app-infinite-load-bar></app-infinite-load-bar>    
+    </div>
+    
 
 </div>

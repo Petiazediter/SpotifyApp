@@ -10,6 +10,7 @@ export class InfiniteLoadBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
