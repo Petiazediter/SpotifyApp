@@ -37,6 +37,7 @@
         rightText="There's a lot of interesting things about you!"
         class="maintext">
         </app-main-text>
-        <app-infinite-load-bar></app-infinite-load-bar>    
+        <app-infinite-load-bar *ngIf="isLoaded == false"></app-infinite-load-bar>    
     </div>
+    Tracks : {{ medTermTopTracks }}
 </div>

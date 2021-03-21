@@ -3,11 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserTrackResponseObject } from '../models/UserTrackResponseObject';
+import { SpotifyServiceInterface } from './spotify_service_interface';
+import { Terms } from './terms';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class SpotifyService {
+export class SpotifyService implements SpotifyServiceInterface {
 
   public static LONG_TERM : string = "long_term"
   public static MED_TERM : string = "medium_term"
@@ -60,9 +64,10 @@ export class SpotifyService {
     return this.httpClient.get<UserTrackResponseObject>(url,requestOptions).toPromise();
   }
 
-  GetTopTracks(term : string){
-    return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/tracks?time_range=" + term, this.GetHeaderOptions())
-  }
+  
+  GetTop20Tracks(term : Terms){
+    return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/tracks?time_range=" + term.valueOf() + "&limit=20", this.GetHeaderOptions())
+  } 
 
   GetTopTracksByUrl(url : string){
     return this.httpClient.get<any>(url, this.GetHeaderOptions()) 
