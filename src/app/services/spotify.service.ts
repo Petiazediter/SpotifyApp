@@ -13,9 +13,6 @@ export class SpotifyService {
   private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'
 
   constructor(private location : Location, private httpClient : HttpClient) { 
-    if ( localStorage.getItem("token") != null){
-      this.token = localStorage.getItem("token")
-    }
   }
 
   generateLink(clientId : string, redirectUri : string){
@@ -30,12 +27,10 @@ export class SpotifyService {
 
   SetToken(token : any){
     this.token = token
-    localStorage.setItem("token", token)
   }
 
   OnSignOut(){
     this.token = null;
-    localStorage.removeItem("token")
     this.location.replaceState("/")
   }
 
