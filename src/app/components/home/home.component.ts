@@ -16,9 +16,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if ( this.userToken != null){
-      this.location.replaceState("/stats")
-    }
   }
 
   onConnect(): void{

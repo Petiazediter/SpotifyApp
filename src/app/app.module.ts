@@ -7,15 +7,13 @@ import { HomeComponent } from './components/home/home.component';
 import { IdComponent } from './components/static/id/id.component';
 import { CallbackComponent } from './components/callback/callback.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     IdComponent,
-    CallbackComponent,
-    StatsComponent
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
