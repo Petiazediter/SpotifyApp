@@ -9,6 +9,10 @@ import { UserTrackResponseObject } from '../models/UserTrackResponseObject';
 })
 export class SpotifyService {
 
+  public static LONG_TERM : string = "long_term"
+  public static MED_TERM : string = "medium_term"
+  public static SHORT_TERM : string = "short_term"
+
   public static token : any = null;
   private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'
 
@@ -17,7 +21,7 @@ export class SpotifyService {
   }
 
   generateLink(clientId : string, redirectUri : string){
-    var scopes = 'user-read-private user-read-email user-library-read'
+    var scopes = 'user-read-private user-read-email user-library-read user-top-read'
     var link = 'https://accounts.spotify.com/authorize'+
     '?response_type=token'+
     '&client_id=' + clientId +
@@ -53,6 +57,14 @@ export class SpotifyService {
   GetTracksByUrl(url : string){
     const requestOptions = this.GetHeaderOptions();
     return this.httpClient.get<UserTrackResponseObject>(url,requestOptions).toPromise();
+  }
+
+  GetTopTracks(term : string){
+    return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/tracks?time_range=" + term, this.GetHeaderOptions())
+  }
+
+  GetTopTracksByUrl(url : string){
+    return this.httpClient.get<any>(url, this.GetHeaderOptions()) 
   }
 
 }
