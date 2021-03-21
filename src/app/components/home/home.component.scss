@@ -6,6 +6,7 @@ div.container{
     display: flex;
     overflow: hidden;
 
+
     div.left_side{
         position: absolute;
         background-color: #F1F1E6;
@@ -47,6 +48,10 @@ div.container{
 
     }
 
+    div.left_side.withtoken{
+        width: 100vw;
+    }
+
     div.right_side{
         visibility: hidden;
     }
@@ -56,7 +61,7 @@ div.container{
         height: max-content;
         margin: 15px;
         top: 0px;
-        right: 0%;
+        right:0px;
         display: flex;
         
 
@@ -151,9 +156,9 @@ div.container{
             height: max-content;
             margin: 15px;
             top: 0px;
-            right: 50%;
+            right: 0%;
             display: flex;
-            
+            z-index: 20;
     
             img.icon{
                 background-color: #1ED760;

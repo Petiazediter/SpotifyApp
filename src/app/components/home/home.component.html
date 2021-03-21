@@ -4,6 +4,11 @@
         leftText="We love your taste of music."
         rightText="Get your Spotify stats, and be proud of your numbers!"
         class="maintext"></app-main-text>
+
+        <div (click)="onConnect()" class="icon-btn">
+            <img class="icon" src="assets/images/SpotifyIcon.svg">
+            <button href="#">Connect with Spotify</button>
+        </div>
     </div>
 
     <div class="right_side">
@@ -16,32 +21,29 @@
     </div>
 
 
-    <div (click)="onConnect()" class="icon-btn">
-        <img class="icon" src="assets/images/SpotifyIcon.svg">
-        <button href="#">Connect with Spotify</button>
-    </div>
+
 </div>
 
 <div *ngIf="getToken() != null" class="container">
-    <div class="left_side">
+
+
+
+    <div class="left_side withtoken">
         <app-main-text 
         leftText="We love your taste of music."
         rightText="Get your Spotify stats, and be proud of your numbers!"
         class="maintext"></app-main-text>
+
+        <div (click)="onSignOut()" class="icon-btn">
+            <img class="icon" src="assets/images/SpotifyIcon.svg">
+            <button href="#">Disconnect from Spotify</button>
+        </div>  
     </div>
 
     <div class="right_side">
-        <img class="background" src="assets/images/featured.png">
 
-        <section>
-            <img class="foreground" src="assets/images/featured.png">
-            <span class="featured-txt">Featured: Casey Veggies</span>
-        </section>
     </div>
 
 
-    <div (click)="onSignOut()" class="icon-btn">
-        <img class="icon" src="assets/images/SpotifyIcon.svg">
-        <button href="#">Disconnect from Spotify</button>
-    </div>  
+
 </div>
