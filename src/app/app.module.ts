@@ -8,6 +8,7 @@ import { IdComponent } from './components/static/id/id.component';
 import { CallbackComponent } from './components/callback/callback.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainTextComponent } from './components/mini/main-text/main-text.component';
+import { InfiniteLoadBarComponent } from './components/mini/infinite-load-bar/infinite-load-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MainTextComponent } from './components/mini/main-text/main-text.compone
     HomeComponent,
     IdComponent,
     CallbackComponent,
-    MainTextComponent
+    MainTextComponent,
+    InfiniteLoadBarComponent
   ],
   imports: [
     BrowserModule,
