@@ -23,9 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSignOut() : void{
-    this.service.SetToken(null);
-    localStorage.removeItem("token")
-    this.userToken = null;
+    this.service.OnSignOut();
   }
 
 }

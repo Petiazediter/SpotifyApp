@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-text',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-text.component.scss']
 })
 export class MainTextComponent implements OnInit {
+
+  @Input() leftText : any = "";
+  @Input() rightText : any = "";
 
   constructor() { }
 
