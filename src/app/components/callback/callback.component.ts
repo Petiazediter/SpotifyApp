@@ -22,8 +22,10 @@ export class CallbackComponent implements OnInit {
       }
       if ( x[0].key == "access_token"){
         spotifyService.SetToken(x[0].value);
+        
       } else {
-        spotifyService.SetToken(null);
+        spotifyService.OnSignOut();
+        return;
       }
       window.location.href = "http://localhost:4200/"
     });
