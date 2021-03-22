@@ -109,11 +109,14 @@ div.loadingcontainer{
 @media only screen and (min-width: 768px) {
     // Desktop
     div.container{
-        position: relative;
+        position: absolute;
         width: 100vw;
-        height: 100vh;
-        display: flex;
     
+        div.statcontainer{
+            position: relative;
+            height: min-content;
+        }
+
         div.left_side{
             position: absolute;
             width: 50vw;

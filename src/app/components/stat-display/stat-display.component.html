@@ -4,17 +4,17 @@
 
     <div class="top_container">
         <!-- 1st most listened -->
-        <section class="title green-text">Your most listened track in the past 4 weeks</section>
-        <img src="assets/images/featured.png" class="top-img"/>
-        <section class="track-name"><b>"Organic"</b></section>
-        <section class="album-name">on <b>XY album name blabla</b></section>
-        <section class="by-artist">By <b>Casey Veggies</b></section>
+        <section class="title green-text">Your most listened track {{ title }}</section>
+        <img [src]="tracks.items[0].album.images[0].url" class="top-img"/>
+        <section class="track-name"><b>"{{tracks.items[0].name}}"</b></section>
+        <section class="album-name">on <b>{{ tracks.items[0].album.name}}</b></section>
+        <section class="by-artist">By <b>{{tracks.items[0].artists[0].name}}</b></section>
     </div>
 
     <!-- 2nd most listened to 5th most listened -->
-    <img class="second" src="assets/images/featured.png"/>
-    <img class="third" src="assets/images/featured.png"/>
-    <img class="fourth" src="assets/images/featured.png"/>
-    <img class="fifth" src="assets/images/featured.png"/>
+    <img class="second" [src]="tracks.items[1].album.images[0].url"/>
+    <img class="third" [src]="tracks.items[2].album.images[0].url"/>
+    <img class="fourth" [src]="tracks.items[3].album.images[0].url"/>
+    <img class="fifth" [src]="tracks.items[4].album.images[0].url"/>
 
 </div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Track } from 'src/app/models/Track';
+import { TrackContainer } from 'src/app/models/TrackContainer';
 
 @Component({
   selector: 'top-tracks-display',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatDisplayComponent implements OnInit {
 
-  constructor() { }
+  @Input() tracks : any;
+  @Input() title : string;
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
+    console.log(this.tracks)
   }
 
 }
