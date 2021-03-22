@@ -1,0 +1,15 @@
+div.page{
+    width: 100vw;
+    height: 100vh;
+
+    a.see_all{
+        position: absolute;
+        width: fit-content;
+        padding: 15px;
+        top: 100%;
+        left: 100%;
+        text-align: center;
+        transform: translate(-100%,-100%);
+        color: blue;
+    }
+}
