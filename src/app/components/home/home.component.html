@@ -39,4 +39,7 @@
         </app-main-text>
         <app-infinite-load-bar></app-infinite-load-bar>    
     </div>
+    <div *ngIf="isLoaded == true">
+        <top-tracks-display></top-tracks-display>
+    </div>
 </div>

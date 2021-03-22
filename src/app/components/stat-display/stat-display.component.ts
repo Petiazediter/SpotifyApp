@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-stat-display',
+  selector: 'top-tracks-display',
   templateUrl: './stat-display.component.html',
   styleUrls: ['./stat-display.component.scss']
 })
