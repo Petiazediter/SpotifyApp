@@ -9,6 +9,7 @@ import { CallbackComponent } from './components/callback/callback.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainTextComponent } from './components/mini/main-text/main-text.component';
 import { InfiniteLoadBarComponent } from './components/mini/infinite-load-bar/infinite-load-bar.component';
+import { StatDisplayComponent } from './components/stat-display/stat-display.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { InfiniteLoadBarComponent } from './components/mini/infinite-load-bar/in
     IdComponent,
     CallbackComponent,
     MainTextComponent,
-    InfiniteLoadBarComponent
+    InfiniteLoadBarComponent,
+    StatDisplayComponent
   ],
   imports: [
     BrowserModule,
