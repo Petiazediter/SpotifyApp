@@ -39,7 +39,7 @@ export class HomeComponent {
     y.shortTermTopTracks = x;
   }
 
-  processObserver(promise : Promise<any>, fn : (y:HomeComponent,x : TrackContainer)=> void){
+  processObserver(promise : Promise<any>, fn : (y:HomeComponent,x : any)=> void){
     promise.then((value : TrackContainer) => {
       fn(this,value)
     })
