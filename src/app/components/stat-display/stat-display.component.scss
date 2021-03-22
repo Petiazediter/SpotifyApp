@@ -47,6 +47,7 @@ div.page{
 
         section.track-name{
             position: absolute;
+            width: max-content;
             top: 50%;
             font-family: Main;
             font-size: 3vh;
@@ -57,6 +58,7 @@ div.page{
 
         section.album-name{
             position: absolute;
+            width: max-content;
             top: 50%;
             font-family: Main;
             font-size: 3vh;
@@ -67,6 +69,7 @@ div.page{
 
         section.by-artist{
             position: absolute;
+            width: max-content;
             top: 50%;
             font-family: Main;
             font-size: 3vh;
@@ -74,6 +77,38 @@ div.page{
             left: 50%;
             transform: translate(-50%,24vh);
         }
-        
+    
+    }
+
+    .second{
+        position: absolute;
+        width: 24vh;
+        top: 25%;
+        left: 25%;
+        transform: translateX(-50%) rotate(-15deg);
+    }
+
+    .third{
+        position: absolute;
+        width: 20vh;
+        top:30%;
+        left: 75%;
+        transform: translateX(-50%) rotate(15deg);
+    }
+
+    .fourth{
+        position: absolute;
+        width: 15vh;
+        bottom: 25%;
+        left: 15%;
+        transform: translateX(-50%) rotate(-15deg);
+    }
+
+    .fifth{
+        position: absolute;
+        width: 10vh;
+        bottom:30%;
+        left: 85%;
+        transform: translateX(-50%) rotate(15deg);
     }
 }
