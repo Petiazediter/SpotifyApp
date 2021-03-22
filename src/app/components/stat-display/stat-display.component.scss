@@ -28,13 +28,13 @@ div.page{
         transform: translate(-50%,-50%);
     
         section.title{
-            top: 50%;
+            bottom: 50%;
             position: absolute;
             overflow-wrap: break-word;
             font-family: Main;
-            font-size: 3vw;
+            font-size: 6vh;
             text-align: center;
-            transform: translateY(-30vh)
+            transform: translateY(-16vh);
         }
 
         img.top-img{
@@ -44,5 +44,36 @@ div.page{
             top: 50%;
             transform: translate(-50%,-50%);
         }
+
+        section.track-name{
+            position: absolute;
+            top: 50%;
+            font-family: Main;
+            font-size: 3vh;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%,16vh);
+        }
+
+        section.album-name{
+            position: absolute;
+            top: 50%;
+            font-family: Main;
+            font-size: 3vh;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%,20vh);
+        }
+
+        section.by-artist{
+            position: absolute;
+            top: 50%;
+            font-family: Main;
+            font-size: 3vh;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%,24vh);
+        }
+        
     }
 }
