@@ -1,4 +1,34 @@
 div.container{
+    position: relative;
     width: 100vw;
     height: 100vh;
+
+    section.title{
+        position: absolute;
+        font-family: Main;
+        font-size: 6vh;
+        left: 25%;
+        top: 10%;
+        max-width: 28%;
+        text-align: center;
+        overflow-wrap: break-word;
+        transform: translateX(-50%);
+    }
+
+    .profile_img_bg{
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        height: 100vh;
+        filter: blur(8px);
+    }
+
+    .profile_img_fg{
+        position: absolute;
+        left: 75%;
+        width: 25%;
+        height: 25vw;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
 }
