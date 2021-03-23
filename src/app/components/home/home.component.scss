@@ -6,7 +6,7 @@ div.container{
 
     div.left_side{
         position: absolute;
-        
+        background-color:#F1F1E6;
         width: 100vw;
 
         div.right_aligned{
@@ -44,9 +44,6 @@ div.container{
             transform: translateY(-100%);
             display: flexbox;
         }
-
-
-
     }
 
     div.left_side.withtoken{

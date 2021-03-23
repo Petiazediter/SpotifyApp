@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { element } from 'protractor';
 import { Track } from 'src/app/models/Track';
 import { TrackContainer } from 'src/app/models/TrackContainer';
 
@@ -16,7 +17,6 @@ export class StatDisplayComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.tracks)
   }
 
 }
