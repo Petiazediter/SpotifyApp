@@ -1,11 +1,7 @@
 
 div.container{
-    position: relative;
     width: 100vw;
-    height: 100vh;
     background-color: #F1F1E6;
-    display: flex;
-    overflow: hidden;
 
     div.left_side{
         position: absolute;
@@ -109,8 +105,8 @@ div.loadingcontainer{
 @media only screen and (min-width: 768px) {
     // Desktop
     div.container{
-        position: absolute;
         width: 100vw;
+
     
         div.statcontainer{
             position: relative;
