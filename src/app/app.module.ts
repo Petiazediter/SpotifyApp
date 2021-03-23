@@ -10,6 +10,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainTextComponent } from './components/mini/main-text/main-text.component';
 import { InfiniteLoadBarComponent } from './components/mini/infinite-load-bar/infinite-load-bar.component';
 import { StatDisplayComponent } from './components/stat-display/stat-display.component';
+import { ArtistsDisplayComponent } from './components/artists-display/artists-display.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StatDisplayComponent } from './components/stat-display/stat-display.com
     CallbackComponent,
     MainTextComponent,
     InfiniteLoadBarComponent,
-    StatDisplayComponent
+    StatDisplayComponent,
+    ArtistsDisplayComponent
   ],
   imports: [
     BrowserModule,
