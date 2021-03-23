@@ -20,12 +20,12 @@ export class CallbackComponent implements OnInit {
         let v = y.split("=");
         x.push({key : v[0],value : v[1]})
       }
-      console.log(x[0].key)
-      console.log("Access token : ")
       if ( x[0].key == "access_token"){
         spotifyService.SetToken(x[0].value);
+        
       } else {
-        spotifyService.SetToken(null);
+        spotifyService.OnSignOut();
+        return;
       }
       window.location.href = "http://localhost:4200/"
     });

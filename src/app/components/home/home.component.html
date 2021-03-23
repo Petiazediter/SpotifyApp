@@ -1,13 +1,14 @@
-<div class="container">
-
+<div *ngIf="getToken() == null" class="container">
     <div class="left_side">
-        <div class="right_aligned">
-            We Love<br>your<br>taste
+        <app-main-text 
+        leftText="We love your taste of music."
+        rightText="Get your Spotify stats, and be proud of your numbers!"
+        class="maintext"></app-main-text>
+
+        <div (click)="onConnect()" class="icon-btn">
+            <img class="icon" src="assets/images/SpotifyIcon.svg">
+            <button href="#">Connect with Spotify</button>
         </div>
-        <div class="left_aligned">
-            Track your<br>Spotify stats,get to<br>know your taste.<br>Lorem ipsum
-        </div>
-        <!--img class="waves" src="assets/images/wave_light.svg"-->
     </div>
 
     <div class="right_side">
@@ -18,16 +19,42 @@
             <span class="featured-txt">Featured: Casey Veggies</span>
         </section>
     </div>
+</div>
 
+<div *ngIf="getToken() != null" class="container">
 
-    <div *ngIf="userToken == null" (click)="onConnect()" class="icon-btn">
+    <div (click)="onSignOut()" class="icon-btn">
         <img class="icon" src="assets/images/SpotifyIcon.svg">
-        <button href="#">Connect with Spotify</button>
-    </div>
+        <button href="#">Disconnect from Spotify</button>
+    </div>  
 
-    <div *ngIf="userToken != null" (click)="onSignOut()" class="icon-btn">
-        <img class="icon" src="assets/images/SpotifyIcon.svg">
-        <button href="#">Sign out Spotify</button>
+    <div class="loadingcontainer" *ngIf="isLoaded == false">
+        <app-main-text 
+        leftText="We reading your stats..."
+        rightText="There's a lot of interesting things about you!"
+        class="maintext">
+        </app-main-text>
+        <app-infinite-load-bar></app-infinite-load-bar>    
     </div>
-
+    <div class="statcontainer" *ngIf="isLoaded == true">
+        <app-artists-display
+        title="in the past 4 week"
+        [artists]="shortTermTopArtists"></app-artists-display><br>
+        <app-artists-display
+        title="in the past 3 months"
+        [artists]="medTermTopArtists"></app-artists-display><br>
+        <app-artists-display
+        title="of all time"
+        [artists]="longTermTopArtists"><br>
+        </app-artists-display><br>
+        <top-tracks-display
+        title="in the past 4 week"
+        [tracks]="shortTermTopTracks"></top-tracks-display><br>
+        <top-tracks-display
+        title="in the past 3 months"
+        [tracks]="medTermTopTracks"></top-tracks-display><br>
+        <top-tracks-display
+        title="of all time"
+        [tracks]="longTermTopTracks"></top-tracks-display><br>
+    </div>
 </div>

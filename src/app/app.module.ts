@@ -7,7 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { IdComponent } from './components/static/id/id.component';
 import { CallbackComponent } from './components/callback/callback.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { StatsComponent } from './components/stats/stats.component';
+import { MainTextComponent } from './components/mini/main-text/main-text.component';
+import { InfiniteLoadBarComponent } from './components/mini/infinite-load-bar/infinite-load-bar.component';
+import { StatDisplayComponent } from './components/stat-display/stat-display.component';
+import { ArtistsDisplayComponent } from './components/artists-display/artists-display.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { StatsComponent } from './components/stats/stats.component';
     HomeComponent,
     IdComponent,
     CallbackComponent,
-    StatsComponent
+    MainTextComponent,
+    InfiniteLoadBarComponent,
+    StatDisplayComponent,
+    ArtistsDisplayComponent
   ],
   imports: [
     BrowserModule,

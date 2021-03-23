@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StatsComponent } from './stats.component';
+import { InfiniteLoadBarComponent } from './infinite-load-bar.component';
 
-describe('StatsComponent', () => {
-  let component: StatsComponent;
-  let fixture: ComponentFixture<StatsComponent>;
+describe('InfiniteLoadBarComponent', () => {
+  let component: InfiniteLoadBarComponent;
+  let fixture: ComponentFixture<InfiniteLoadBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StatsComponent ]
+      declarations: [ InfiniteLoadBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StatsComponent);
+    fixture = TestBed.createComponent(InfiniteLoadBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
