@@ -10,9 +10,12 @@ export class ArtistsDisplayComponent implements OnInit {
   @Input() artists : any;
   @Input() title : string;
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
+    console.log(this.artists)
   }
 
 }

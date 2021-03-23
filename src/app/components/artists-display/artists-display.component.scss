@@ -3,17 +3,6 @@ div.container{
     width: 100vw;
     height: 100vh;
 
-    section.title{
-        position: absolute;
-        font-family: Main;
-        font-size: 6vh;
-        left: 25%;
-        top: 10%;
-        max-width: 28%;
-        text-align: center;
-        overflow-wrap: break-word;
-        transform: translateX(-50%);
-    }
 
     .profile_img_bg{
         position: absolute;
@@ -30,5 +19,53 @@ div.container{
         height: 25vw;
         top: 50%;
         transform: translate(-50%,-50%);
+    }
+
+    .infos{
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        width: 50vw;
+        height: 50vh;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .followers{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        font-family: Main;
+        font-size: 3vh;
+        color: gray;
+    }
+
+    .artist_name{
+        position: relative;
+        text-align: center;
+        font-family: Main;
+        font-size: 10vh;
+    }
+
+    section.title{
+        max-width: 30vw;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        font-family: Main;
+        font-size: 6vh;
+        text-align: center;
+    }
+    
+    .list{
+        margin-top: 6vh;
+        position: absolute;
+        padding: 0%;
+        list-style: square;
+        font-family: Main;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 3vh;
     }
 }
