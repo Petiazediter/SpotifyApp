@@ -2,6 +2,7 @@
 div.container{
     width: 100vw;
     background-color: #F1F1E6;
+    overflow-x: hidden;
 
     div.left_side{
         position: absolute;
@@ -110,7 +111,7 @@ div.loadingcontainer{
     
         div.statcontainer{
             position: relative;
-            height: min-content;
+            width: 100%;
         }
 
         div.left_side{
