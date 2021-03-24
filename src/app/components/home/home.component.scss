@@ -1,92 +1,77 @@
+div.left_side{
+    background-color: #f1f1e6;
+}
 
-div.container{
-    width: 100vw;
-    background-color: #F1F1E6;
-    overflow-x: hidden;
-
-    div.left_side{
+@media only screen and (max-width: 600px) {
+    // Mobile
+    div.container{
         position: absolute;
-        background-color:#F1F1E6;
+        height: 100vh;
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        transform: translate(-50%,-50%);
+        overflow-x: hidden;
         width: 100vw;
 
-        div.right_aligned{
+        div.left_side{
             position: absolute;
-            font-family: Main;
-            text-align: end;
-            font-size: 10vw;
+            width: 100%;
+            height: 100%;
+        }
+
+        app-main-text{
+            position: absolute;
             top: 50%;
-            right: 50%;
-            margin: 10px;
-            background-color: #3CD2B7;
-            background-clip: text;
-            text-shadow: 0px 4px 4px rgba(255,255,255,.5);
-            color: transparent;
+            left: 50%;
+            width: 100%;
+            height: 100%;
             transform: translate(-50%,-50%);
         }
 
-        div.left_aligned{
+        div.left_side.withtoken{
+            width: 100vw;
+        }
+
+        div.right_side{
+            width: 0%;
+            height: 0%;
+            visibility: hidden;
+        }
+
+        div.icon-btn{
             position: absolute;
-            font-family: Roboto;
-            text-align: left;
-            top: 50%;
-            margin: 10px;
-            margin-left: 50px;
-            color: #727272;
-            left: 50%;
-            transform: translate(-50%,-50%);     
-        }
+            height: max-content;
+            margin: 15px;
+            top: 0px;
+            right:0px;
+            display: flex;
+            
 
-        img.waves{
-            position: relative;
-            width: 100%;
-            bottom: 0;
-            top: 100%;
-            transform: translateY(-100%);
-            display: flexbox;
-        }
-    }
+            img.icon{
+                background-color: #1ED760;
+                max-height: 100%;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                padding: 5px;
+                cursor: pointer;   
+            }
 
-    div.left_side.withtoken{
-        width: 100vw;
-    }
-
-    div.right_side{
-        visibility: hidden;
-    }
-
-    div.icon-btn{
-        position: absolute;
-        height: max-content;
-        margin: 15px;
-        top: 0px;
-        right:0px;
-        display: flex;
-        
-
-        img.icon{
-            background-color: #1ED760;
-            max-height: 100%;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            padding: 5px;
-            cursor: pointer;   
-        }
-
-        button{
-            background-color: #1ED760;
-            outline: none;
-            border: none;
-            font-family: Main;
-            color: white;
-            padding: 5px;
-            font-size: 4vw;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            cursor: pointer;
+            button{
+                background-color: #1ED760;
+                outline: none;
+                border: none;
+                font-family: Main;
+                color: white;
+                padding: 5px;
+                font-size: 4vw;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                cursor: pointer;
+            }
         }
     }
 }
-
 
 div.loadingcontainer{
     position: absolute;
@@ -104,8 +89,8 @@ div.loadingcontainer{
     // Desktop
     div.container{
         width: 100%;
+        overflow-x: hidden;
 
-    
         div.statcontainer{
             position: relative;
             width: 100%;
