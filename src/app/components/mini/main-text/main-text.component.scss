@@ -1,32 +1,71 @@
-div.text-container{
+@media only screen and (min-width: 601px) {
+    // Mobile
+    div.text-container{
 
-    div.left-side{
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        text-align: end;
-        font-family: Main;
-        font-size: 4vw;
-        max-width: 15vw;
-        overflow-wrap: break-word;
-        transform: translateY(-50%);
-        margin-right: 15px;
+        div.left-side{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            text-align: end;
+            font-family: Main;
+            font-size: 4vw;
+            max-width: 15vw;
+            overflow-wrap: break-word;
+            transform: translateY(-50%);
+            margin-right: 15px;
+        }
+
+
+        div.right-side{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: start;
+            font-family: Roboto;
+            font-size: 1.5vw;
+            max-width: 15vw;
+            overflow-wrap: break-word;
+            transform: translateY(-50%);
+            margin-left: 15px;
+            color: #adadad;
+            font-weight: bold;
+        }
+
     }
+}
+
+@media only screen and (max-width: 600px) {
+    // Mobile
+    div.text-container{
+
+        div.left-side{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            text-align: end;
+            font-family: Main;
+            font-size: 4vh;
+            max-width: 15vh;
+            overflow-wrap: break-word;
+            transform: translateY(-50%);
+            margin-right: 15px;
+        }
 
 
-    div.right-side{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        text-align: start;
-        font-family: Roboto;
-        font-size: 1.5vw;
-        max-width: 15vw;
-        overflow-wrap: break-word;
-        transform: translateY(-50%);
-        margin-left: 15px;
-        color: #adadad;
-        font-weight: bold;
+        div.right-side{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: start;
+            font-family: Roboto;
+            font-size: 1.5vh;
+            max-width: 15vh;
+            overflow-wrap: break-word;
+            transform: translateY(-50%);
+            margin-left: 15px;
+            color: #adadad;
+            font-weight: bold;
+        }
+
     }
-
 }
