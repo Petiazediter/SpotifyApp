@@ -34,32 +34,26 @@ export class HomeComponent {
   }
 
   SetMedTermTopTracks(y : HomeComponent,x : any){
-    console.log(x)
     y.medTermTopTracks = x;
   }
 
   SetMedTermTopArtists(y : HomeComponent, x : any){
-    console.log(x)
     y.medTermTopArtists = x;
   }
 
   SetLongTermTopTracks(y : HomeComponent,x : any){
-    console.log(x)
     y.longTermTopTracks = x;
   }
 
   SetLongTermTopArtists(y : HomeComponent, x : any){
-    console.log(x)
     y.longTermTopArtists = x;
   }
 
   SetShortTermTopArtists(y : HomeComponent, x : any){
-    console.log(x)
     y.shortTermTopArtists = x;
   }
 
   SetShortTermTopTracks(y : HomeComponent,x : any){
-    console.log(x)
     y.shortTermTopTracks = x;
   }
 
@@ -78,7 +72,9 @@ export class HomeComponent {
   }
 
   onConnect(): void{
-    this.service.generateLink("aaeea3eaae8940c1a35e4645a2028096","http://localhost:4200/callback/");
+    let href = window.location.href;
+    href = href + "callback/"
+    this.service.generateLink("aaeea3eaae8940c1a35e4645a2028096",href);
   }
 
   onSignOut() : void{

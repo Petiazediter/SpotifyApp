@@ -1,7 +1,8 @@
+import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class CallbackComponent implements OnInit {
 
-  constructor(private httpClient : HttpClient, private route : ActivatedRoute, private spotifyService : SpotifyService) {
+  constructor(private httpClient : HttpClient, private route : ActivatedRoute, private spotifyService : SpotifyService, private router : Router) {
     this.route.queryParams.subscribe(params => {
       const hashString = window.location.hash.substring(1)
       const table = hashString.split("&")
@@ -27,7 +28,7 @@ export class CallbackComponent implements OnInit {
         spotifyService.OnSignOut();
         return;
       }
-      window.location.href = "http://localhost:4200/"
+      this.router.navigate(['/'],{skipLocationChange : false})
     });
   }
 
