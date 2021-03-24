@@ -90,16 +90,16 @@ export class SpotifyService implements SpotifyServiceInterface {
   }
 
   
-  GetTop20Tracks(term : Terms){
-    return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/tracks?time_range=" + term.valueOf() + "&limit=20", this.GetHeaderOptions())
+  GetTopTrack(term : Terms){
+    return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/tracks?time_range=" + term.valueOf() + "&limit=5", this.GetHeaderOptions())
   } 
 
   GetTopTracksByUrl(url : string){
     return this.httpClient.get<any>(url, this.GetHeaderOptions()) 
   }
 
-  GetTop20Artists(term : Terms){
-    return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/artists?time_range=" + term.valueOf() + "&limit=20", this.GetHeaderOptions())
+  GetTopArtist(term : Terms){
+    return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/artists?time_range=" + term.valueOf() + "&limit=5", this.GetHeaderOptions())
   } 
 
 }

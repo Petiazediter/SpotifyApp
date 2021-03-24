@@ -14,9 +14,9 @@ export class HomeComponent {
   loaded : number = 0;
   private hadToLoad : number = 6;
   isLoaded : boolean = false;
-  shortTermTopTracks!: TrackContainer;
-  medTermTopTracks!: TrackContainer;
-  longTermTopTracks!: TrackContainer;
+  shortTermTopTracks!: any;
+  medTermTopTracks!: any;
+  longTermTopTracks!: any;
   shortTermTopArtists!: any;
   medTermTopArtists!:any;
   longTermTopArtists!:any;  
@@ -24,41 +24,47 @@ export class HomeComponent {
   constructor(public service : SpotifyService,private location : Location) { 
     this.loaded = 0;
     if ( SpotifyService.token != null){
-      this.processObserver(service.GetTop20Tracks(Terms.MED_TERM).toPromise(),this.SetMedTermTopTracks)
-      this.processObserver(service.GetTop20Tracks(Terms.LONG_TERM).toPromise(),this.SetLongTermTopTracks)
-      this.processObserver(service.GetTop20Tracks(Terms.SHORT_TERM).toPromise(),this.SetShortTermTopTracks)
-      this.processObserver(service.GetTop20Artists(Terms.MED_TERM).toPromise(),this.SetMedTermTopArtists)
-      this.processObserver(service.GetTop20Artists(Terms.LONG_TERM).toPromise(),this.SetLongTermTopArtists)
-      this.processObserver(service.GetTop20Artists(Terms.SHORT_TERM).toPromise(),this.SetShortTermTopArtists)
+      this.processObserver(service.GetTopTrack(Terms.MED_TERM).toPromise(),this.SetMedTermTopTracks)
+      this.processObserver(service.GetTopTrack(Terms.LONG_TERM).toPromise(),this.SetLongTermTopTracks)
+      this.processObserver(service.GetTopTrack(Terms.SHORT_TERM).toPromise(),this.SetShortTermTopTracks)
+      this.processObserver(service.GetTopArtist(Terms.MED_TERM).toPromise(),this.SetMedTermTopArtists)
+      this.processObserver(service.GetTopArtist(Terms.LONG_TERM).toPromise(),this.SetLongTermTopArtists)
+      this.processObserver(service.GetTopArtist(Terms.SHORT_TERM).toPromise(),this.SetShortTermTopArtists)
     }
   }
 
-  SetMedTermTopTracks(y : HomeComponent,x : TrackContainer){
+  SetMedTermTopTracks(y : HomeComponent,x : any){
+    console.log(x)
     y.medTermTopTracks = x;
   }
 
   SetMedTermTopArtists(y : HomeComponent, x : any){
+    console.log(x)
     y.medTermTopArtists = x;
   }
 
-  SetLongTermTopTracks(y : HomeComponent,x : TrackContainer){
+  SetLongTermTopTracks(y : HomeComponent,x : any){
+    console.log(x)
     y.longTermTopTracks = x;
   }
 
   SetLongTermTopArtists(y : HomeComponent, x : any){
+    console.log(x)
     y.longTermTopArtists = x;
   }
 
   SetShortTermTopArtists(y : HomeComponent, x : any){
+    console.log(x)
     y.shortTermTopArtists = x;
   }
 
-  SetShortTermTopTracks(y : HomeComponent,x : TrackContainer){
+  SetShortTermTopTracks(y : HomeComponent,x : any){
+    console.log(x)
     y.shortTermTopTracks = x;
   }
 
   processObserver(promise : Promise<any>, fn : (y:HomeComponent,x : any)=> void){
-    promise.then((value : TrackContainer) => {
+    promise.then((value : any) => {
       fn(this,value)
     })
     .finally(() =>{
