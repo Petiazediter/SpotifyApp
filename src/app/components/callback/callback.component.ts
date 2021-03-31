@@ -12,7 +12,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class CallbackComponent implements OnInit {
 
-  constructor(private httpClient : HttpClient, private route : ActivatedRoute, private spotifyService : SpotifyService, private router : Router) {
+  constructor(private route : ActivatedRoute, private spotifyService : SpotifyService, private router : Router) {
     this.route.queryParams.subscribe(params => {
       const hashString = window.location.hash.substring(1)
       const table = hashString.split("&")
