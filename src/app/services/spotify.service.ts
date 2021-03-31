@@ -83,7 +83,7 @@ export class SpotifyService implements SpotifyServiceInterface {
 
   GetTracksByUrl(url : string){
     const requestOptions = this.GetHeaderOptions();
-    return this.httpClient.get<UserTrackResponseObject>(url,requestOptions).toPromise();
+    return this.httpClient.get<any>(url,requestOptions);
   }
 
   
