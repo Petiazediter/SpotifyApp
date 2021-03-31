@@ -11,6 +11,7 @@ import { MainTextComponent } from './components/mini/main-text/main-text.compone
 import { InfiniteLoadBarComponent } from './components/mini/infinite-load-bar/infinite-load-bar.component';
 import { StatDisplayComponent } from './components/stat-display/stat-display.component';
 import { ArtistsDisplayComponent } from './components/artists-display/artists-display.component';
+import { AllstatscomponentComponent } from './components/allstatscomponent/allstatscomponent.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ArtistsDisplayComponent } from './components/artists-display/artists-di
     MainTextComponent,
     InfiniteLoadBarComponent,
     StatDisplayComponent,
-    ArtistsDisplayComponent
+    ArtistsDisplayComponent,
+    AllstatscomponentComponent
   ],
   imports: [
     BrowserModule,
