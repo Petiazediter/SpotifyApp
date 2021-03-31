@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {path : '', component : HomeComponent},
   {path : 'callback', component : CallbackComponent},
-  {path : 'stats', component : AllstatscomponentComponent}
+  {path : 'stats/:type/:range', component : AllstatscomponentComponent,pathMatch: 'full'}
 ];
 // path, component
 @NgModule({
