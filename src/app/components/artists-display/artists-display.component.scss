@@ -5,6 +5,14 @@
         width: 100vw;
         height: 100vh;
 
+        .see_all{
+            position:absolute;
+            top:100vh;
+            transform:translateY(-100%);
+            text-align:left;
+            color:blue;
+            cursor:pointer;
+        }
 
         .profile_img_bg{
             position: absolute;
