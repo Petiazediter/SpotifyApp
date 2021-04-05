@@ -40,21 +40,24 @@
     <div class="statcontainer" *ngIf="isLoaded == true">
         <app-artists-display
         title="in the past 4 week"
-        [artists]="shortTermTopArtists"></app-artists-display><br>
+        [artists]="shortTermTopArtists"
+        term="short_term"></app-artists-display><br>
         <top-tracks-display
         title="in the past 4 week"
         [tracks]="shortTermTopTracks"
         term="short_term"></top-tracks-display><br>
         <app-artists-display
         title="in the past 3 months"
-        [artists]="medTermTopArtists"></app-artists-display><br>
+        [artists]="medTermTopArtists"
+        term="med_term"></app-artists-display><br>
         <top-tracks-display
         title="in the past 3 months"
         [tracks]="medTermTopTracks"
         term="med_term"></top-tracks-display><br>
         <app-artists-display
         title="of all time"
-        [artists]="longTermTopArtists"><br>
+        [artists]="longTermTopArtists"
+        term="long_term"><br>
         </app-artists-display><br>
         <top-tracks-display
         title="of all time"

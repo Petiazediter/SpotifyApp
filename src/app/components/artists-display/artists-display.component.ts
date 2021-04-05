@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-artists-display',
@@ -9,13 +10,20 @@ export class ArtistsDisplayComponent implements OnInit {
 
   @Input() artists : any;
   @Input() title : string;
+  @Input() term : string;
 
-  constructor() { 
+  seeAllLink : string;
+
+  constructor(private router : Router) { 
     
   }
 
   ngOnInit(): void {
-    console.log(this.artists)
+    this.seeAllLink = '/stats/artists/' + this.term
+  }
+
+  onSeeAllClick() : void {
+    this.router.navigate([this.seeAllLink],{skipLocationChange : false})
   }
 
 }
