@@ -14,19 +14,27 @@ export class AllstatscomponentComponent implements OnInit {
 
   constructor(private route : ActivatedRoute,private spotifyService : SpotifyService) {
     route.params.subscribe((x:any)=>{
-        if ( x.type =="artists"){
-          var term : Terms = Terms.SHORT_TERM;
+      var term : Terms = Terms.SHORT_TERM;
           if ( Terms.LONG_TERM.valueOf() == x.range){
             term = Terms.LONG_TERM
           } else if (Terms.MED_TERM.valueOf() == x.range){
             term = Terms.MED_TERM
-          }
-
+          }  
+      
+          if ( x.type =="artists"){
           spotifyService.GetTopArtist(term).subscribe((result : any) => {
             result.items.forEach((element : any) => {
                 this.items.push(element)
             });
-
+            if ( result.next != null){
+              this.startLoading(result.next)
+            }
+          })
+        } else if ( x.type == "tracks"){
+          spotifyService.GetTopTrack(term).subscribe((result : any) => {
+            result.items.forEach((element : any) => {
+                this.items.push(element)
+            });
             if ( result.next != null){
               this.startLoading(result.next)
             }
@@ -43,8 +51,6 @@ export class AllstatscomponentComponent implements OnInit {
 
         if ( result.next != null){
           this.startLoading(result.next)
-        } else {
-          console.log("Final  :" + this.items[0])
         }
     })    
   }

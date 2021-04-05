@@ -43,19 +43,22 @@
         [artists]="shortTermTopArtists"></app-artists-display><br>
         <top-tracks-display
         title="in the past 4 week"
-        [tracks]="shortTermTopTracks"></top-tracks-display><br>
+        [tracks]="shortTermTopTracks"
+        term="short_term"></top-tracks-display><br>
         <app-artists-display
         title="in the past 3 months"
         [artists]="medTermTopArtists"></app-artists-display><br>
         <top-tracks-display
         title="in the past 3 months"
-        [tracks]="medTermTopTracks"></top-tracks-display><br>
+        [tracks]="medTermTopTracks"
+        term="med_term"></top-tracks-display><br>
         <app-artists-display
         title="of all time"
         [artists]="longTermTopArtists"><br>
         </app-artists-display><br>
         <top-tracks-display
         title="of all time"
-        [tracks]="longTermTopTracks"></top-tracks-display><br>
+        [tracks]="longTermTopTracks"
+        term="long_term"></top-tracks-display><br>
     </div>
 </div>
