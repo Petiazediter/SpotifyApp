@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Roboto;
+    src: url(assets/fonts/roboto.ttf);
+}
+
+@font-face {
+    font-family: Main;
+    src:url(assets/fonts/main.ttf);
+}
+
+body{
+    margin: auto;
+    height: 100%;
+}
+
+.green-text{
+    background-color: #3CD2B7;
+    background-clip: text;
+    text-shadow: 0px 4px 4px rgba(255,255,255,.5);
+    color: transparent;
+}

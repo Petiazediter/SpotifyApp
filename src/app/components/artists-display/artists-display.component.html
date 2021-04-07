@@ -1,0 +1,20 @@
+<div class="container">
+
+
+    <img class="profile_img_bg" [src]="artists.items[0].images[0].url">
+    <img class="profile_img_fg" [src]="artists.items[0].images[0].url">
+    <div class="infos">
+        <section class="title green-text">Your most listened artist {{ title }}</section><br>
+        <section class="artist_name">{{ artists.items[0].name }}</section><br>
+        <section class="followers">with <span class="green-text">{{artists.items[0].followers.total}}</span> total followers</section><br>
+        <p class="followers" *ngIf="artists.items[0].genres.length">in the following genres:</p><br>
+        <div>
+            <ul class="list">
+                <li class="genres" *ngFor="let item of artists.items[0].genres">{{item}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <a (click)="onSeeAllClick()" class="see_all">See all >></a>
+
+</div>
