@@ -1,4 +1,7 @@
 # SpotifyApp
+SpotifyApp is a data tracker application. You can log in with your Spotify user to the page, and the application will display your favourite artists and tracks.
+This application is an only frontend application.
+You can run the application with the `ng serve` terminal command.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
