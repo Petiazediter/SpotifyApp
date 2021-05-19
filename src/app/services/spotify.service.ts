@@ -20,7 +20,7 @@ export class SpotifyService implements SpotifyServiceInterface {
   public static token : any = null;
   private clientId : string = 'aaeea3eaae8940c1a35e4645a2028096'
 
-  constructor(private location : Location, private httpClient : HttpClient) { 
+  constructor(private location : Location, private httpClient : HttpClient) {
     if ( this.isExpired()) {
       SpotifyService.token = null;
     } else {
@@ -50,8 +50,9 @@ export class SpotifyService implements SpotifyServiceInterface {
     '?response_type=token'+
     '&client_id=' + clientId +
     (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-    '&redirect_uri=' + encodeURIComponent(redirectUri) 
+    '&redirect_uri=' + encodeURIComponent(redirectUri)
     window.location.href=link;
+    console.log(redirectUri);
   }
 
   SetToken(token : any){
@@ -72,7 +73,7 @@ export class SpotifyService implements SpotifyServiceInterface {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Authorization': 'Bearer '+ SpotifyService.token,
-    } 
+    }
     return {headers : new HttpHeaders(headerDict)}
   }
 
@@ -86,17 +87,17 @@ export class SpotifyService implements SpotifyServiceInterface {
     return this.httpClient.get<any>(url,requestOptions);
   }
 
-  
+
   GetTopTrack(term : Terms){
     return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/tracks?time_range=" + term.valueOf() + "&limit=5", this.GetHeaderOptions())
-  } 
+  }
 
   GetTopTracksByUrl(url : string){
-    return this.httpClient.get<any>(url, this.GetHeaderOptions()) 
+    return this.httpClient.get<any>(url, this.GetHeaderOptions())
   }
 
   GetTopArtist(term : Terms){
     return this.httpClient.get<any>("https://api.spotify.com/v1/me/top/artists?time_range=" + term.valueOf() + "&limit=5", this.GetHeaderOptions())
-  } 
+  }
 
 }
