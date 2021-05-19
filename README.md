@@ -3,6 +3,8 @@ SpotifyApp is a data tracker application. You can log in with your Spotify user 
 This application is an only frontend application.
 You can run the application with the `ng serve` terminal command.
 
+The application is live in this site: https://jolly-pasteur-550bcd.netlify.app
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
 ## Development server
