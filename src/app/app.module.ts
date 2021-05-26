@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { IdComponent } from './components/static/id/id.component';
 import { CallbackComponent } from './components/callback/callback.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MainTextComponent } from './components/mini/main-text/main-text.component';
 import { InfiniteLoadBarComponent } from './components/mini/infinite-load-bar/infinite-load-bar.component';
 import { StatDisplayComponent } from './components/stat-display/stat-display.component';
 import { ArtistsDisplayComponent } from './components/artists-display/artists-display.component';
-import { AllstatscomponentComponent } from './components/allstatscomponent/allstatscomponent.component';
+import { AllStatsComponent } from './components/allstatscomponent/all-stats.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { AllstatscomponentComponent } from './components/allstatscomponent/allst
     InfiniteLoadBarComponent,
     StatDisplayComponent,
     ArtistsDisplayComponent,
-    AllstatscomponentComponent
+    AllStatsComponent
   ],
   imports: [
     BrowserModule,
