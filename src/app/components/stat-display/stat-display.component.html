@@ -1,24 +1,24 @@
-<div class="page">
+<div class="page" *ngIf="loadedTracks!==undefined">
 
     <a (click)="onSeeAllClick()" class="see_all">See all >></a>
 
     <div class="top_container">
         <!-- 1st most listened -->
         <section class="title green-text">Your most listened track {{ title }}</section>
-        <img [src]="tracks.items[0].album.images[0].url" class="top-img"/>
-        <section class="track-name"><b>"{{tracks.items[0].name}}"</b></section>
-        <section class="album-name">on <b>{{ tracks.items[0].album.name}}</b></section>
-        <section class="by-artist">By <b>{{tracks.items[0].artists[0].name}}</b></section>
+        <img alt="album-cover" [src]="loadedTracks.items[0].album.images[0].url" class="top-img"/>
+        <section class="track-name"><b>"{{loadedTracks.items[0].name}}"</b></section>
+        <section class="album-name">on <b>{{ loadedTracks.items[0].album.name}}</b></section>
+        <section class="by-artist">By <b>{{loadedTracks.items[0].artists[0].name}}</b></section>
     </div>
 
     <!-- 2nd most listened to 5th most listened -->
-    <img class="second" [src]="tracks.items[1].album.images[0].url"/>
-    <img class="third" [src]="tracks.items[2].album.images[0].url"/>
-    <img class="fourth" [src]="tracks.items[3].album.images[0].url"/>
-    <img class="fifth" [src]="tracks.items[4].album.images[0].url"/>
+    <img alt="album cover" class="second" [src]="loadedTracks.items[1].album.images[0].url"/>
+    <img alt="album cover" class="third" [src]="loadedTracks.items[2].album.images[0].url"/>
+    <img alt="album cover" class="fourth" [src]="loadedTracks.items[3].album.images[0].url"/>
+    <img alt="album cover" class="fifth" [src]="loadedTracks.items[4].album.images[0].url"/>
 
     <div class="arrow">
-        <img class="arrow" src="assets/images/Arrow.svg"/>
+        <img alt="album cover" class="arrow" src="assets/images/Arrow.svg"/>
         <a class="green-text">Next</a>
     </div>
 </div>

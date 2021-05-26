@@ -1,14 +1,12 @@
 import {AlbumArtist} from './AlbumArtist';
-import {Album} from './Album';
+import {Image} from './Image';
 
-export class Track{
-  album: Album;
+export interface Album {
   artists: AlbumArtist[];
-  explicit: boolean;
   href: string;
+  images: Image[];
   id: string;
   name: string;
-  popularity: number;
   type: string;
   uri: string;
 }

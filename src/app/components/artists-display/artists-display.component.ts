@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {ArtistWrapper} from '../../models/ArtistWrapper';
+import {Observable} from 'rxjs';
+import {Artist} from '../../models/Artist';
 
 @Component({
   selector: 'app-artists-display',
@@ -8,22 +11,23 @@ import { Router } from '@angular/router';
 })
 export class ArtistsDisplayComponent implements OnInit {
 
-  @Input() artists : any;
-  @Input() title : string;
-  @Input() term : string;
+  @Input() artists: Observable<ArtistWrapper>;
+  @Input() title: string;
+  @Input() term: string;
 
-  seeAllLink : string;
+  loadedArtists: undefined|ArtistWrapper;
 
-  constructor(private router : Router) { 
-    
-  }
+  seeAllLink: string;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.seeAllLink = '/stats/artists/' + this.term
+    this.artists.subscribe(value => this.loadedArtists = value);
+    this.seeAllLink = `/stats/artists/${this.term}`;
   }
 
-  onSeeAllClick() : void {
-    this.router.navigate([this.seeAllLink],{skipLocationChange : false})
+  onSeeAllClick(): void {
+    this.router.navigate([this.seeAllLink], { skipLocationChange : false});
   }
 
 }
