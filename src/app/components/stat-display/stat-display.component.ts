@@ -1,30 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { element } from 'protractor';
-import { Track } from 'src/app/models/Track';
-import { TrackContainer } from 'src/app/models/TrackContainer';
+import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
+import {TrackWrapper} from '../../models/TrackWrapper';
 
 @Component({
-  selector: 'top-tracks-display',
+  selector: 'app-top-tracks-display',
   templateUrl: './stat-display.component.html',
   styleUrls: ['./stat-display.component.scss']
 })
 export class StatDisplayComponent implements OnInit {
 
-  @Input() tracks : any;
-  @Input() title : string;
-  @Input() term : string;
-  seeAllLink : string;
+  @Input() tracks: Observable<TrackWrapper>;
+  @Input() title: string;
+  @Input() term: string;
+  seeAllLink: string;
+  loadedTracks: TrackWrapper|undefined;
 
-  constructor(private router : Router) { 
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.seeAllLink = '/stats/tracks/' + this.term //this.router.navigate([],{skipLocationChange : false})
+    this.tracks.subscribe(value => this.loadedTracks = value);
+    this.seeAllLink = `/stats/tracks/${this.term}`;
   }
 
-  onSeeAllClick() : void {
-    this.router.navigate([this.seeAllLink],{skipLocationChange : false})
+  onSeeAllClick(): void {
+    this.router.navigate([this.seeAllLink], { skipLocationChange : false});
   }
 
 }
