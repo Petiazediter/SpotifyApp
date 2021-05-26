@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MainTextComponent implements OnInit {
 
-  @Input() leftText : any = "";
-  @Input() rightText : any = "";
+  @Input() leftText = '';
+  @Input() rightText = '';
 
   constructor() { }
 
