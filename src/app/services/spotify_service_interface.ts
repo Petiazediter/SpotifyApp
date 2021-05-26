@@ -1,8 +1,6 @@
-import { Observable } from "rxjs";
-import { Terms } from "./terms";
+import {Observable} from 'rxjs';
+import {Terms} from './terms';
 
-export interface SpotifyServiceInterface{
-
-    GetTopTrack(term : Terms) : Observable<any>
-
+export interface SpotifyServiceInterface {
+  getTopTrack(term: Terms): Observable<any>;
 }
