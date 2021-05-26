@@ -1,16 +1,14 @@
-<div class="container">
-
-
-    <img class="profile_img_bg" [src]="artists.items[0].images[0].url">
-    <img class="profile_img_fg" [src]="artists.items[0].images[0].url">
+<div class="container" *ngIf="loadedArtists !== undefined">
+    <img alt="profile_img background" class="profile_img_bg" [src]="loadedArtists.items[0].images[0].url">
+    <img alt="profile_img foreground" class="profile_img_fg" [src]="loadedArtists.items[0].images[0].url">
     <div class="infos">
         <section class="title green-text">Your most listened artist {{ title }}</section><br>
-        <section class="artist_name">{{ artists.items[0].name }}</section><br>
-        <section class="followers">with <span class="green-text">{{artists.items[0].followers.total}}</span> total followers</section><br>
-        <p class="followers" *ngIf="artists.items[0].genres.length">in the following genres:</p><br>
+        <section class="artist_name">{{ loadedArtists.items[0].name }}</section><br>
+        <section class="followers">with <span class="green-text">{{loadedArtists.items[0].followers.total}}</span> total followers</section><br>
+        <p class="followers" *ngIf="loadedArtists.items[0].genres.length">in the following genres:</p><br>
         <div>
             <ul class="list">
-                <li class="genres" *ngFor="let item of artists.items[0].genres">{{item}}</li>
+                <li class="genres" *ngFor="let item of loadedArtists.items[0].genres">{{item}}</li>
             </ul>
         </div>
     </div>
